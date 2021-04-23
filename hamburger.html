@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+      }
+
+
+      .navbar {
+        background-color: #333;
+        width: 25%;
+        height: 1000vh;
+        display: none;
+        position:absolute;
+        right:0vh;
+        top:0vh;
+      }
+
+      .navbar ul {
+        overflow: hidden;
+        list-style-type: none;
+        padding-top: 50%;
+        margin: 0;
+      }
+
+      .navbar li {
+        display: block;
+        margin: 0;
+        padding: 5% 50px;
+        width: 100%;
+      }
+
+      .navbar li:hover {
+        cursor: pointer;
+      }
+
+
+      .navbar li a {
+        color: #d3e3e3;
+        text-decoration: none;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.6em;
+        transition: all .5s;
+      }
+
+      .navbar li:hover {
+        cursor: pointer;
+        background-color: #ce3939;
+        letter-spacing: 10px;
+      }
+
+      .hamburger {
+        margin: 0;
+        margin-left: 15px;
+        padding: 0;
+        float: left;
+        transition: opacity .3s;
+        position:absolute;
+        z-index: 1;
+        top:2vh;
+        right:1vw;
+      }
+
+      .hamburger:hover {
+        cursor: pointer;
+        opacity: .5;
+      }
+
+      .hamburger .line{
+        width: 50px;
+        height: 5px;
+        background: rgb(236, 66, 66);
+        margin: 8px auto;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+      }
+
+
+      .hamburger .line {
+        background-color: #111;
+      }
+
+      .hamburger.isactive .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.isactive .line:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+        background-color: white;
+      }
+
+      .hamburger.isactive .line:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+        background-color: white;
+
+      }
+
+      .navbar {
+        transition: all 2s ease-in-out;
+      }
+
+      .navbar.active {
+        display: block;
+        animation: fade .5s;
+      }
+
+      @keyframes fade {
+        from{transform: translateX(200px); opacity: 0;}
+        to {transform: translateX(0px); opacity: 1;}
+      }
+
+
+      @media screen and (max-width: 1360px) {
+
+        .navbar {
+          width: 30%;
+        }
+
+        .navbar ul {
+          margin-left: 0%;
+
+        }
+
+        .navbar li {
+          padding: 3% 0;
+          padding-left: 10%;
+        }
+
+        .navbar li a {
+          font-size: 1.2em;
+        }
+
+      }
+
+      @media screen and (max-width: 768px) {
+        .hamburger {
+          float: right;
+        }
+
+
+        .navbar {
+        background-color: #333;
+        width: 100%;
+        height: 50vh;
+        display: none;
+      }
+
+      .navbar ul {
+        overflow: hidden;
+        list-style-type: none;
+        padding-top: 20%;
+        padding-left: 0%;
+        padding-right: 3%;
+        padding-bottom: 10%;
+        margin: 0;
+      }
+
+      .navbar li {
+        display: block;
+        margin: 0;
+        padding: 14px 0px 14px 0px ;
+        text-align: center;
+        width: 103%;
+        transition: background-color .5s;
+      }
+
+      .navbar li:hover {
+        cursor: pointer;
+        background-color: #ce3939;
+      }
+
+
+      .navbar li a {
+        color: #d3e3e3;
+        text-decoration: none;
+        padding: 14px 16px;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1em;
+        transition: all 1s;
+      }
+
+      .navbar li:hover {
+        cursor: pointer;
+        background-color: #ce3939;
+        letter-spacing: 0px;
+      }}
+    </style>
+  </head>
+  <body>
+
+    
+
+<div class="container">
+      <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+    <menu class="navbar">
+      <ul>
+        <li><a href="#"><b>Home</b></a></li>
+        <li><a href="#"><b>Portfolio</b></a></li>
+        <li><a href="#"><b>Images</b></a></li>
+        <li><a href="#"><b>Contact</b></a></li>
+      </ul>
+    </menu>
+  </div>
+
+
+
+    <script>
+      let hamburger = document.querySelector(".hamburger");
+      let menu = document.querySelector(".navbar");
+      let bod = document.querySelector(".container");
+
+      hamburger.addEventListener("click", function () {
+        hamburger.classList.toggle("isactive");
+        menu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
